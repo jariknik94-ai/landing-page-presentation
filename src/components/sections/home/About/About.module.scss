@@ -3,3 +3,8 @@
 .about-copy { max-width: 620px; }.about-copy p { color: #a8bec4; font-size: 16px; line-height: 1.9; margin: 0 0 20px; }.about-copy .lead { color: #edf7f5; font-size: clamp(19px,1.6vw,23px); line-height: 1.65; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }.about-tags span { padding: 10px 15px; border: 1px solid #28515a; color: #aed2d2; font-size: 12px; }
 
+.about { position: relative; overflow: hidden; background: radial-gradient(ellipse at 9% 15%, rgba(14, 102, 105, .18), transparent 42%), linear-gradient(145deg, #071724, #091e2b 62%, #071724); }
+.about::before { content: ''; position: absolute; width: 520px; aspect-ratio: 1; left: -240px; bottom: -300px; border: 1px solid rgba(64, 219, 211, .15); border-radius: 50%; box-shadow: 0 0 0 65px rgba(39, 188, 184, .035), 0 0 0 130px rgba(39, 188, 184, .025); pointer-events: none; }
+.about .wrap { position: relative; }
+.about-tags span { background: rgba(30, 144, 145, .08); border-color: rgba(67, 199, 193, .25); }
+

@@ -1,9 +1,10 @@
 @use '../../../../styles/shared';
 @include shared.base;
 
-.hero { position: relative; overflow: hidden; min-height: 790px; background: radial-gradient(ellipse at 80% 56%, #0b4952 0%, #071f2c 31%, #061321 72%); }
-.hero-glow { position: absolute; inset: 0; background: linear-gradient(90deg, #061321 0%, transparent 65%), linear-gradient(0deg, #061321 0%, transparent 22%); pointer-events: none; }
-.hero-inner { min-height: 790px; position: relative; display: flex; align-items: center; }
+.hero { position: relative; overflow: hidden; min-height: 790px; background: #061321 url('/assets/hero-waves.png') center bottom / 100% auto no-repeat; }
+.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(4, 20, 32, .78) 0%, rgba(4, 20, 32, .56) 27%, transparent 48%); pointer-events: none; }
+.hero-inner { min-height: 790px; position: relative; z-index: 1; display: flex; align-items: center; }
+.hero-architecture { position: absolute; z-index: 1; top: 14%; left: 38%; width: min(48%, 650px); height: auto; opacity: .9; filter: saturate(1.25) drop-shadow(0 0 10px rgba(0, 236, 225, .28)); pointer-events: none; }
 .hero-copy { position: relative; z-index: 4; width: 49%; padding: 116px 0 160px; }
 .eyebrow span { display: inline-block; width: 26px; height: 1px; background: #29e1d2; vertical-align: middle; margin-right: 10px; }
 .hero h1 { margin: 0; font: 400 clamp(4.1rem, 6.2vw, 7rem)/1.02 var(--font-lora), Georgia, serif; letter-spacing: -.045em; color: #f6f8f7; }
@@ -13,28 +14,39 @@
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px 35px; margin-top: 33px; }
 .text-link { display: inline-flex; align-items: center; font-size: 14px; color: #e5f4f1; text-decoration: none; }
 .text-link span { color: #29dfd1; margin-left: 8px; font-size: 16px; }
-.hero-visual { position: absolute; z-index: 2; pointer-events: none; width: 100%; right: -6%; height: calc(100% - 84px); bottom: 0; }
-.hero-reference { width: 100%; height: 100%; object-fit: cover; object-position: right center; mask-image: linear-gradient(to right, transparent 0%, transparent 43%, black 55%); clip-path: polygon(0 10%, 64% 10%, 64% 0, 100% 0, 100% 100%, 0 100%); }
-.terrain { position: absolute; width: 100%; height: 48%; bottom: 0; left: 0; z-index: 1; opacity: .9; pointer-events: none; }
+.hero-visual { position: absolute; z-index: 2; pointer-events: none; width: 100%; right: 0; height: calc(100% - 84px); bottom: 0; overflow: hidden; }
+.hero-portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  -webkit-mask: url('/assets/hero-portrait-mask.png') center / 100% 100% no-repeat;
+  mask: url('/assets/hero-portrait-mask.png') center / 100% 100% no-repeat;
+}
 .hero-bottom { position: absolute; bottom: 42px; left: 0; z-index: 5; display: flex; align-items: center; gap: 14px; color: #95b6ba; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
 .hero-bottom i { width: 22px; height: 1px; background: #3b8587; }
 
 @media (max-width: 1000px) {
   .hero, .hero-inner { min-height: 0; }
+  .hero { background-position: center 38%; }
+  .hero::before { background: linear-gradient(to bottom, rgba(4, 20, 32, .70) 0%, rgba(4, 20, 32, .55) 48%, rgba(4, 20, 32, .75) 75%, #061321 100%); }
   .hero-inner { display: flex; flex-direction: column; align-items: stretch; }
-  .hero-copy { width: 100%; padding: 126px 0 0; }
-  .hero h1 { font-size: clamp(2.8rem, 9vw, 5rem); }
-  .hero-role { font-size: clamp(1.2rem, 3vw, 1.5rem); }
-  .hero-visual { position: relative; right: auto; bottom: auto; width: 100%; max-width: 500px; height: clamp(290px, 85vw, 430px); margin: 24px auto 0; }
-  .hero-reference { object-position: right center; mask-image: linear-gradient(to bottom, transparent 0%, black 17%, black 86%, transparent 100%); clip-path: none; }
-  .terrain { height: 40%; }
+  .hero-copy { width: 100%; padding: 126px 0 72px; }
+  .hero-heading { width: 53%; min-height: clamp(200px, 55vw, 400px); }
+  .hero h1 { font-size: clamp(1.8rem, 9vw, 3.6rem); }
+  .hero-role { font-size: clamp(1rem, 3vw, 1.35rem); }
+  .hero-architecture { top: 145px; left: 23%; width: min(72%, 440px); opacity: .45; }
+  .hero-visual { position: absolute; top: 166px; right: 0; bottom: auto; width: 47%; height: clamp(200px, 55vw, 400px); }
+  .hero-portrait { right: 0; }
   .hero-bottom { display: none; }
 }
 
 @media (max-width: 430px) {
   .hero-copy { padding-top: 115px; }
-  .hero h1 { font-size: clamp(2.6rem, 11vw, 3.55rem); }
+  .hero h1 { font-size: clamp(1.8rem, 9vw, 2.8rem); }
   .hero-copy .eyebrow { font-size: 11px; line-height: 1.6; }
   .hero-actions { gap: 18px 24px; }
-  .hero-visual { height: clamp(290px, 90vw, 370px); }
+  .hero-visual { top: 155px; }
 }

@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/Icon/Icon';
+import { instructionProfiles } from '@/data/resume';
 import styles from './Expertise.module.scss';
 
 const areas = [
@@ -26,6 +27,20 @@ export default function Expertise() {
             </article>
           ))}
         </div>
+        <details className={styles['instruction-details']}>
+          <summary>Подробнее о должностных обязанностях</summary>
+          <p className={styles['instruction-intro']}>Направления и функции из должностных инструкций, с которыми ознакомился Владимир. Инструкции описывают обязанности должностей и требования к ним, а не результаты конкретных проектов.</p>
+          <div className={styles['instruction-grid']}>
+            {instructionProfiles.map((profile) => (
+              <article className={styles['instruction-card']} key={profile.title}>
+                <h3>{profile.title}</h3>
+                <p className={styles['instruction-role']}>{profile.role}</p>
+                <ul>{profile.duties.map((duty) => <li key={duty}>{duty}</li>)}</ul>
+                {'requirements' in profile && <p className={styles['instruction-note']}>{profile.requirements}</p>}
+              </article>
+            ))}
+          </div>
+        </details>
       </div>
     </section>
   );
