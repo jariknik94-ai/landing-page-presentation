@@ -2,7 +2,7 @@
   .wrap { width: min(100% - 96px, 1392px); margin-inline: auto; }
   .section { padding: 132px 0; }
   .eyebrow { color: #35d9ce; font-size: 12px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; margin: 0 0 24px; }
-  .section h2, .contact h2 { margin: 0; font-family: var(--font-lora), Georgia, serif; font-weight: 400; line-height: 1.12; font-size: clamp(2.7rem, 4.5vw, 4.65rem); letter-spacing: -.035em; }
+  .section h2, .contact h2 { margin: 0; font-family: var(--font-lora), Georgia, serif; font-weight: 400; line-height: 1.12; font-size: clamp(2.7rem, 4.5vw, 4.65rem); letter-spacing: -.035em; overflow-wrap: anywhere; }
   .section h2 em, .contact h2 em { color: #7cd9d5; font-style: italic; }
   .section-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; }
   .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 58px; }
@@ -15,7 +15,7 @@
   @media (max-width: 800px) {
     .wrap { width: min(100% - 40px, 1392px); }
     .section { padding: 85px 0; }
-    .section-grid { grid-template-columns: 1fr; gap: 36px; }
+    .section-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
     .section-heading { align-items: start; flex-direction: column; gap: 18px; margin-bottom: 38px; }
   }
 }

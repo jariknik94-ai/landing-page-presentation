@@ -1,8 +1,27 @@
-import styles from "./Credentials.module.scss";
+import { courses, education } from '@/data/resume';
+import styles from './Credentials.module.scss';
 
 export default function Credentials() {
   return (
-    <section className={styles["section"] + " " + styles["credentials"]}><div className={styles["wrap"] + " " + styles["credentials-inner"]}><div><p className={styles["eyebrow"]}>Образование и развитие</p><h2>Учиться.<br /><em>Применять.</em></h2></div><div className={styles["credentials-list"]}><div><span>Образование</span><p>Кузбасский государственный технический университет имени Т. Ф. Горбачёва<br /><small>Электроэнергетика и электротехника · магистратура</small></p></div><div><span>Архитектура</span><p>Сертификация архитектора 1 уровня<br /><small>Сбер · 2024</small></p></div><div><span>Системный анализ</span><p>Школа системного анализа и программа по корпоративной архитектуре<br /><small>Корпоративный университет Сбербанка · 2023</small></p></div></div></div></section>
+    <section className={`${styles.section} ${styles.credentials}`} id="education">
+      <div className={styles.wrap}>
+        <div className={styles['credentials-inner']}>
+          <div><p className={styles.eyebrow}>Образование и развитие</p><h2>Учиться.<br /><em>Применять.</em></h2></div>
+          <div className={styles['credentials-list']}>
+            {education.map((item) => (
+              <div key={item.label}><span>{item.label}</span><p>{item.title}<br /><small>{item.detail}</small></p></div>
+            ))}
+          </div>
+        </div>
+        <details className={styles['courses-details']}>
+          <summary>Другие программы и сертификаты</summary>
+          <div className={styles['courses-list']}>
+            {courses.map((group) => (
+              <div key={group.year}><h3>{group.year}</h3><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul></div>
+            ))}
+          </div>
+        </details>
+      </div>
+    </section>
   );
 }
-

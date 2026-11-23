@@ -4,6 +4,7 @@ import About from "@/components/sections/home/About/About";
 import Expertise from "@/components/sections/home/Expertise/Expertise";
 import Experience from "@/components/sections/home/Experience/Experience";
 import Projects from "@/components/sections/home/Projects/Projects";
+import Skills from "@/components/sections/home/Skills/Skills";
 import Approach from "@/components/sections/home/Approach/Approach";
 import Credentials from "@/components/sections/home/Credentials/Credentials";
 import Contact from "@/components/sections/home/Contact/Contact";
@@ -17,10 +18,11 @@ export default function Home() {
       <Hero />
       <About />
       <Expertise />
-      <Experience />
       <Projects />
-      <Approach />
+      <Experience />
+      <Skills />
       <Credentials />
+      <Approach />
       <Contact />
     </main>
     <Footer />

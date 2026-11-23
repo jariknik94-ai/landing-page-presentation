@@ -1,4 +1,16 @@
-@use '../../../../styles/shared'; @include shared.base;
-.contact { position: relative; padding: 130px 0; background: radial-gradient(ellipse at 82% 45%,#0b5960,#092a35 35%,#071824 78%); border-top: 1px solid #21535c; }.contact-inner { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: end; }.contact h2 { font-size: clamp(3.5rem,6vw,6rem); }.contact p:not(.eyebrow) { color: #afc7cb; line-height: 1.8; max-width: 490px; font-size: 15px; margin: 25px 0 30px; }.contact-aside { display: flex; flex-direction: column; }.contact-label { color: #67c8c5; text-transform: uppercase; font-size: 11px; letter-spacing: .13em; padding-bottom: 17px; }.contact-aside a { display: flex; justify-content: space-between; text-decoration: none; padding: 17px 0; border-top: 1px solid #40727a; font-size: 15px; }.contact-aside a span { color: #36e2d4; }.contact-aside a:hover { color: #41e4d8; }
-@media(max-width: 700px) { .contact { padding: 85px 0; }.contact-inner { grid-template-columns: 1fr; gap: 60px; } }
+@use '../../../../styles/shared';
+@include shared.base;
 
+.contact { position: relative; padding: 130px 0; background: radial-gradient(ellipse at 82% 45%, #0b5960, #092a35 35%, #071824 78%); border-top: 1px solid #21535c; }
+.contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 350px); gap: 60px; align-items: end; }
+.contact h2 { font-size: clamp(3.5rem, 6vw, 6rem); }
+.contact p:not(.eyebrow) { color: #afc7cb; line-height: 1.8; max-width: 490px; font-size: 15px; margin: 25px 0 30px; }
+.contact-aside { min-width: 0; }
+.contact-label { display: block; color: #67c8c5; text-transform: uppercase; font-size: 12px; letter-spacing: .13em; margin-bottom: 19px; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-button { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; color: #6ee9dd; border: 1px solid #3a7b80; background: rgba(6, 23, 34, .5); border-radius: 50%; transition: color .2s, background .2s, border-color .2s, transform .2s; }
+.contact-button svg { display: block; width: 24px; height: 24px; }
+.contact-button:hover { color: #062321; background: #48dfd2; border-color: #48dfd2; transform: translateY(-3px); }
+
+@media (max-width: 700px) { .contact { padding: 85px 0; }.contact-inner { grid-template-columns: minmax(0, 1fr); gap: 48px; } }
+@media (max-width: 380px) { .contact-buttons { gap: 8px; }.contact-button { width: 44px; height: 44px; }.contact-button svg { width: 21px; height: 21px; } }
