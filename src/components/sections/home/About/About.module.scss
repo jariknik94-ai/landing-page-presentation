@@ -1,0 +1,5 @@
+@use '../../../../styles/shared'; @include shared.base;
+.about { background: #071724; border-top: 1px solid #15434c; }
+.about-copy { max-width: 620px; }.about-copy p { color: #a8bec4; font-size: 16px; line-height: 1.9; margin: 0 0 20px; }.about-copy .lead { color: #edf7f5; font-size: clamp(19px,1.6vw,23px); line-height: 1.65; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }.about-tags span { padding: 10px 15px; border: 1px solid #28515a; color: #aed2d2; font-size: 12px; }
+

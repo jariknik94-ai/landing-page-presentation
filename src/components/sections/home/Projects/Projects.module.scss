@@ -1,0 +1,4 @@
+@use '../../../../styles/shared'; @include shared.base;
+.projects { background: #0a1c29; }.project-list { border-top: 1px solid #31525b; }.project { display: grid; grid-template-columns: 1fr 2fr auto; gap: 30px; align-items: start; padding: 35px 0 38px; border-bottom: 1px solid #31525b; }.project-index { color: #35dfd2; font-size: 12px; letter-spacing: .1em; }.project-index span { color: #8eaab2; margin-left: 8px; letter-spacing: 0; }.project h3 { margin: 0 0 13px; font-size: clamp(20px,2vw,26px); font-weight: 500; }.project p { margin: 0; max-width: 660px; color: #9eb6bd; font-size: 14px; line-height: 1.8; }.project-symbol { font-size: 24px; color: #47dfd4; }.project-note { color: #7e9ca4; font-size: 12px; line-height: 1.7; margin: 23px 0 0; }
+@media(max-width: 700px) { .project { grid-template-columns: 1fr auto; gap: 16px; }.project-index { grid-column: 1 / -1; } }
+
