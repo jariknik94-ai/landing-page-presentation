@@ -1,10 +1,75 @@
-@use '../../../../styles/shared'; @include shared.base;
-.approach { background: #071724; }.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 25px; }.steps > div { border-top: 1px solid #31777b; padding-top: 25px; }.steps span { color: #40d7cc; font-size: 12px; }.steps h3 { font-size: 20px; font-weight: 600; margin: 25px 0 12px; }.steps p { color: #9db5bd; line-height: 1.8; font-size: 14px; max-width: 250px; }
-@media(max-width: 700px) { .steps { grid-template-columns: repeat(2,1fr); gap: 32px 20px; } } @media(max-width: 400px) { .steps { grid-template-columns: 1fr; } }
+@use '../../../../styles/shared';
+@include shared.base;
+.approach {
+  background: #071724;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.steps > div {
+  border-top: 1px solid #31777b;
+  padding-top: 25px;
+}
+.steps span {
+  color: #40d7cc;
+  font-size: 12px;
+}
+.steps h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 25px 0 12px;
+}
+.steps p {
+  color: #bfd0d2;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 250px;
+}
+@media (max-width: 700px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+}
+@media (max-width: 400px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
 
-.approach { position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 100%, rgba(0, 120, 118, .17), transparent 55%), #061722; }
-.approach::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 95px, rgba(72, 197, 189, .035) 96px); mask-image: linear-gradient(to bottom, transparent, #000); pointer-events: none; }
-.approach .wrap { position: relative; }
-.steps > div { position: relative; border-top-color: rgba(75, 219, 206, .48); padding: 28px 16px 18px; background: linear-gradient(180deg, rgba(20, 99, 96, .12), transparent); }
-.steps > div::before { content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%; top: -4px; left: 0; background: #51e1d6; box-shadow: 0 0 12px rgba(81, 225, 214, .7); }
-
+.approach {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(0, 120, 118, 0.17), transparent 55%), #061722;
+}
+.approach::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 95px, rgba(72, 197, 189, 0.035) 96px);
+  mask-image: linear-gradient(to bottom, transparent, #000);
+  pointer-events: none;
+}
+.approach .wrap {
+  position: relative;
+}
+.steps > div {
+  position: relative;
+  border-top-color: rgba(75, 219, 206, 0.48);
+  padding: 28px 16px 18px;
+  background: linear-gradient(180deg, rgba(20, 99, 96, 0.12), transparent);
+}
+.steps > div::before {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  top: -4px;
+  left: 0;
+  background: #51e1d6;
+  box-shadow: 0 0 12px rgba(81, 225, 214, 0.7);
+}

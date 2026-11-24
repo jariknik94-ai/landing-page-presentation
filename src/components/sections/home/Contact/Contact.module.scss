@@ -1,30 +1,187 @@
 @use '../../../../styles/shared';
 @include shared.base;
 
-.contact { position: relative; padding: 130px 0; background: radial-gradient(ellipse at 82% 45%, #0b5960, #092a35 35%, #071824 78%); border-top: 1px solid #21535c; }
-.contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); gap: 0 60px; align-items: start; }
-.contact-heading, .contact-copy, .contact-aside { grid-column: 1; min-width: 0; }
-.contact-heading { grid-row: 1; }
-.contact-copy { grid-row: 2; }
-.contact-aside { grid-row: 3; margin-top: 42px; }
-.contact h2 { font-size: clamp(3.5rem, 6vw, 6rem); }
-.contact p:not(.eyebrow) { color: #afc7cb; line-height: 1.8; max-width: 490px; font-size: 15px; margin: 25px 0 30px; }
-.contact-aside { min-width: 0; }
-.contact-label { display: block; color: #67c8c5; text-transform: uppercase; font-size: 12px; letter-spacing: .13em; margin-bottom: 19px; }
-.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
-.contact-button { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; color: #6ee9dd; border: 1px solid #3a7b80; background: rgba(6, 23, 34, .5); border-radius: 50%; transition: color .2s, background .2s, border-color .2s, transform .2s; }
-.contact-button svg { display: block; width: 24px; height: 24px; }
-.contact-button:hover { color: #062321; background: #48dfd2; border-color: #48dfd2; transform: translateY(-3px); }
+.contact {
+  position: relative;
+  padding: 130px 0;
+  background: radial-gradient(ellipse at 82% 45%, #0b5960, #092a35 35%, #071824 78%);
+  border-top: 1px solid #21535c;
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
+  gap: 0 60px;
+  align-items: start;
+}
+.contact-heading,
+.contact-copy,
+.contact-aside {
+  grid-column: 1;
+  min-width: 0;
+}
+.contact-heading {
+  grid-row: 1;
+}
+.contact-copy {
+  grid-row: 2;
+}
+.contact-aside {
+  grid-row: 3;
+  margin-top: 42px;
+}
+.contact h2 {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+}
+.contact p:not(.eyebrow) {
+  color: #afc7cb;
+  line-height: 1.8;
+  max-width: 490px;
+  font-size: 15px;
+  margin: 25px 0 30px;
+}
+.contact-aside {
+  min-width: 0;
+}
+.contact-label {
+  display: block;
+  color: #67c8c5;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  margin-bottom: 19px;
+}
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  color: #6ee9dd;
+  border: 1px solid #3a7b80;
+  background: rgba(6, 23, 34, 0.5);
+  border-radius: 50%;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+.contact-button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.contact-button:hover {
+  color: #062321;
+  background: #48dfd2;
+  border-color: #48dfd2;
+  transform: translateY(-3px);
+}
 
-@media (max-width: 700px) { .contact { padding: 85px 0; }.contact-inner { grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 0 12px; }.contact h2 { font-size: clamp(2.1rem, 8vw, 3.4rem); }.contact-copy, .contact-aside { grid-column: 1 / -1; }.contact-aside { margin-top: 38px; } }
-@media (max-width: 380px) { .contact-buttons { gap: 8px; }.contact-button { width: 44px; height: 44px; }.contact-button svg { width: 21px; height: 21px; } }
+@media (max-width: 700px) {
+  .contact {
+    padding: 85px 0;
+  }
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 0 12px;
+  }
+  .contact h2 {
+    font-size: clamp(2.1rem, 8vw, 3.4rem);
+  }
+  .contact-copy,
+  .contact-aside {
+    grid-column: 1 / -1;
+  }
+  .contact-aside {
+    margin-top: 38px;
+  }
+}
+@media (max-width: 380px) {
+  .contact-buttons {
+    gap: 8px;
+  }
+  .contact-button {
+    width: 44px;
+    height: 44px;
+  }
+  .contact-button svg {
+    width: 21px;
+    height: 21px;
+  }
+}
 
-.contact { overflow: hidden; }
-.contact::before { content: ''; position: absolute; width: 540px; aspect-ratio: 1; right: -140px; bottom: -330px; border: 1px solid rgba(91, 232, 221, .2); border-radius: 50%; box-shadow: 0 0 0 55px rgba(67, 211, 198, .05), 0 0 0 110px rgba(67, 211, 198, .035), 0 0 0 165px rgba(67, 211, 198, .02); pointer-events: none; }
-.contact-inner { position: relative; }
-.contact-button:focus-visible { outline: 2px solid #9afff4; outline-offset: 4px; }
+.contact {
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  width: 540px;
+  aspect-ratio: 1;
+  right: -140px;
+  bottom: -330px;
+  border: 1px solid rgba(91, 232, 221, 0.2);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 55px rgba(67, 211, 198, 0.05),
+    0 0 0 110px rgba(67, 211, 198, 0.035),
+    0 0 0 165px rgba(67, 211, 198, 0.02);
+  pointer-events: none;
+}
+.contact-inner {
+  position: relative;
+}
+.contact-button:focus-visible {
+  outline: 2px solid #9afff4;
+  outline-offset: 4px;
+}
 
-.portrait { position: absolute; z-index: 0; top: -130px; right: 0; bottom: -130px; width: min(48%, 600px); overflow: hidden; background: radial-gradient(ellipse at 50% 45%, rgba(31, 185, 179, .2), transparent 68%); pointer-events: none; }
-.portrait img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); }
-.contact-heading, .contact-copy, .contact-aside { position: relative; z-index: 1; }
-@media (max-width: 700px) { .portrait { position: relative; grid-column: 2; grid-row: 1; top: auto; right: auto; bottom: auto; width: 100%; max-width: 240px; justify-self: center; }.portrait img { height: auto; object-position: center top; } }
+.portrait {
+  position: absolute;
+  z-index: 0;
+  top: -130px;
+  right: 0;
+  bottom: -130px;
+  width: min(48%, 600px);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, rgba(31, 185, 179, 0.2), transparent 68%);
+  pointer-events: none;
+}
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: saturate(0.92) contrast(1.03);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+}
+.contact-heading,
+.contact-copy,
+.contact-aside {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 700px) {
+  .portrait {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 240px;
+    justify-self: center;
+  }
+  .portrait img {
+    height: auto;
+    object-position: center top;
+  }
+}

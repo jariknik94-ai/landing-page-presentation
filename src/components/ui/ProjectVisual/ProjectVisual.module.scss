@@ -1,0 +1,33 @@
+.visual {
+  display: grid;
+  place-items: center;
+  position: relative;
+  min-height: 170px;
+  overflow: hidden;
+  color: #66e5da;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(16, 177, 174, 0.21), transparent 65%),
+    linear-gradient(145deg, #0a2b36, #061b28);
+}
+
+.visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(92, 210, 201, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 210, 201, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse, #000, transparent 80%);
+}
+
+.diagram {
+  position: relative;
+  width: min(90%, 300px);
+  height: auto;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(40, 218, 208, 0.32));
+}

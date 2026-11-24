@@ -4,8 +4,20 @@ import { seo, siteUrl } from '@/data/seo';
 import { site } from '@/data/site';
 import './globals.scss';
 
-const plex = localFont({ src: './fonts/IBMPlexSans-Variable.ttf', variable: '--font-plex', weight: '100 700', display: 'swap' });
-const lora = localFont({ src: [{ path: './fonts/Lora-Variable.ttf', style: 'normal', weight: '400 700' }, { path: './fonts/Lora-Italic-Variable.ttf', style: 'italic', weight: '400 700' }], variable: '--font-lora', display: 'swap' });
+const plex = localFont({
+  src: './fonts/IBMPlexSans-Variable.ttf',
+  variable: '--font-plex',
+  weight: '100 700',
+  display: 'swap',
+});
+const lora = localFont({
+  src: [
+    { path: './fonts/Lora-Variable.ttf', style: 'normal', weight: '400 700' },
+    { path: './fonts/Lora-Italic-Variable.ttf', style: 'italic', weight: '400 700' },
+  ],
+  variable: '--font-lora',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,7 +31,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: seo.title,
     description: seo.description,
-    images: [{ url: seo.image, width: 1200, height: 630, alt: `${site.name} — профессиональное портфолио` }],
+    images: [
+      {
+        url: seo.image,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — профессиональное портфолио`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -39,5 +58,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru" className={`${plex.variable} ${lora.variable}`}><body>{children}</body></html>;
+  return (
+    <html lang="ru" className={`${plex.variable} ${lora.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
 }
