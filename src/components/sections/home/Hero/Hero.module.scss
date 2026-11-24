@@ -1,7 +1,7 @@
 @use '../../../../styles/shared';
 @include shared.base;
 
-.hero { position: relative; overflow: hidden; min-height: 790px; background: #061321 url('/assets/hero-waves.png') center bottom / 100% auto no-repeat; }
+.hero { position: relative; overflow: hidden; min-height: 790px; background: #061321 url('/assets/hero-waves.webp') center bottom / 100% auto no-repeat; }
 .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(4, 20, 32, .78) 0%, rgba(4, 20, 32, .56) 27%, transparent 48%); pointer-events: none; }
 .hero-inner { min-height: 790px; position: relative; z-index: 1; display: flex; align-items: center; }
 .hero-architecture { position: absolute; z-index: 1; top: 14%; left: 38%; width: min(48%, 650px); height: auto; opacity: .9; filter: saturate(1.25) drop-shadow(0 0 10px rgba(0, 236, 225, .28)); pointer-events: none; }
@@ -22,8 +22,6 @@
   height: 100%;
   width: auto;
   max-width: none;
-  -webkit-mask: url('/assets/hero-portrait-mask.png') center / 100% 100% no-repeat;
-  mask: url('/assets/hero-portrait-mask.png') center / 100% 100% no-repeat;
 }
 .hero-bottom { position: absolute; bottom: 42px; left: 0; z-index: 5; display: flex; align-items: center; gap: 14px; color: #95b6ba; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
 .hero-bottom i { width: 22px; height: 1px; background: #3b8587; }

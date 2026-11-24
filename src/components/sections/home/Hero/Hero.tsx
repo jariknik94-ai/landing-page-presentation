@@ -20,7 +20,7 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles['hero-visual']}>
-          <img className={styles['hero-portrait']} src="/assets/hero-reference.png" alt="Владимир Скворцов" />
+          <img className={styles['hero-portrait']} src="/assets/hero-portrait.webp" alt="Владимир Скворцов" />
         </div>
         <div className={styles['hero-bottom']}><span>Бизнес-задача</span><i /><span>Системный анализ</span><i /><span>Архитектура</span><i /><span>Решение</span></div>
       </div>
