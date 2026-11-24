@@ -7,7 +7,7 @@ export default function Hero() {
       <div className={`${styles.wrap} ${styles['hero-inner']}`}>
         <img className={styles['hero-architecture']} src="/assets/architecture.svg" alt="" aria-hidden="true" />
         <div className={styles['hero-copy']}>
-          <p className={styles.eyebrow}><span /> Системное мышление · Архитектура решений</p>
+          <p className={styles.eyebrow}><span /> Системное мышление · Архитектура решений · Кибербезопасность</p>
           <div className={styles['hero-heading']}>
             <h1>Владимир<br />Скворцов</h1>
             <div className={styles['accent-line']} />
@@ -15,7 +15,7 @@ export default function Hero() {
           </div>
           <p className={styles['hero-description']}>Проектирую ИТ-решения, прорабатываю требования и интеграции, учитываю риски информационной безопасности.</p>
           <div className={styles['hero-actions']}>
-            <a className={`${styles.button} ${styles['button-primary']}`} href="#contact">Связаться</a>
+            <a className={`${styles.button} ${styles['button-primary']}`} href="#contact">Написать</a>
             <a className={styles['text-link']} href="#projects">Посмотреть результаты <span><Icon name="arrow-down" /></span></a>
           </div>
         </div>

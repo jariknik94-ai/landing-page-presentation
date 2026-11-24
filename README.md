@@ -47,7 +47,8 @@ npm run start
 - `src/components/ui/` — общие элементы интерфейса, в том числе векторные иконки.
 - `src/styles/` — общие SCSS-примеси для компонентов.
 - `src/data/site.ts` — контакты и ссылки на социальные сети; `src/data/resume.ts` — опыт, проекты, навыки, образование и должностные обязанности.
-- `public/assets/` — графика первого экрана: `hero-waves.png`, отдельная архитектурная схема `architecture.svg`, портрет на основе `hero-reference.png` и его маска `hero-portrait-mask.png`.
+- `public/assets/` — логотип и графика: `logo.svg` используется в шапке, подвале и значке вкладки; `hero-waves.png`, `architecture.svg`, `hero-reference.png` и `hero-portrait-mask.png` оформляют первый экран.
+- `public/icons/` — значки для iPhone, iPad и Android; `src/app/manifest.ts` описывает Android-иконки для добавления сайта на экран устройства.
 - `src/app/fonts/` — локальные шрифты IBM Plex Sans и Lora и их лицензии.
 - `docs/resume-cybersecurity.md` — профиль по кибербезопасности, составленный по предоставленным документам.
 

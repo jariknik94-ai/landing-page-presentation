@@ -10,7 +10,7 @@ export default function Header() {
   }, []);
   return (<header className={styles["site-header"]}>
     <div className={styles["wrap"] + " " + styles["header-inner"]}>
-      <a href="#top" className={styles["brand"]} aria-label="Владимир Скворцов, на главную"><span className={styles["brand-mark"]} aria-hidden="true"><i></i><i></i><i></i></span><span>Владимир Скворцов</span></a>
+      <a href="#top" className={styles["brand"]} aria-label="Владимир Скворцов, на главную"><img className={styles["brand-mark"]} src="/assets/logo.svg" alt="" aria-hidden="true" /><span>Владимир Скворцов</span></a>
       <button className={styles["menu-toggle"]} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)} aria-controls="site-nav"><span></span><span></span><span className={styles["sr-only"]}>{menuOpen ? "Закрыть меню" : "Открыть меню"}</span></button>
       <nav className={`${styles["nav"]} ${menuOpen ? styles["is-open"] : ""}`} onClick={() => setMenuOpen(false)} id="site-nav" aria-label="Основная навигация">
         <a href="#about">Обо мне</a><a href="#expertise">Экспертиза</a><a href="#projects">Результаты</a><a href="#experience">Опыт</a><a href="#skills">Навыки</a><a href="#contact">Контакты</a>

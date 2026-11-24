@@ -8,7 +8,15 @@ const lora = localFont({ src: [{ path: './fonts/Lora-Variable.ttf', style: 'norm
 export const metadata: Metadata = {
   title: 'Владимир Скворцов — системный аналитик, архитектор решений и эксперт по кибербезопасности',
   description: 'Системный анализ, архитектура информационных систем, интеграции и кибербезопасность.',
-  icons: { icon: '/assets/favicon.svg' },
+  icons: {
+    icon: '/assets/logo.svg',
+    apple: [
+      { url: '/icons/apple-touch-icon-120.png', sizes: '120x120', type: 'image/png' },
+      { url: '/icons/apple-touch-icon-152.png', sizes: '152x152', type: 'image/png' },
+      { url: '/icons/apple-touch-icon-167.png', sizes: '167x167', type: 'image/png' },
+      { url: '/icons/apple-touch-icon-180.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
