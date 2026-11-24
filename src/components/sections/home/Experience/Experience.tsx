@@ -1,4 +1,5 @@
 import { experience } from '@/data/resume';
+import Image from 'next/image';
 import styles from './Experience.module.scss';
 
 type Position = (typeof experience)[number];
@@ -18,11 +19,17 @@ const employers = experience.reduce<{ company: string; positions: Position[] }[]
 export default function Experience() {
   return (
     <section className={`${styles.section} ${styles.experience}`} id="experience">
-      <div className={`${styles.wrap} ${styles['section-grid']}`}>
-        <div>
-          <p className={styles.eyebrow}>Профессиональный путь</p>
-          <h2>Опыт<br /><em>работы.</em></h2>
-          <p className={styles['section-intro']}>Роли и зоны ответственности в банковских технологиях, корпоративных системах и развитии бизнес-процессов.</p>
+      <div className={styles.wrap}>
+        <div className={styles['section-heading']}>
+          <div>
+            <p className={styles.eyebrow}>Профессиональный путь</p>
+            <h2>Опыт <em>работы.</em></h2>
+          </div>
+          <p>Роли и зоны ответственности в банковских технологиях, корпоративных системах и развитии бизнес-процессов.</p>
+        </div>
+        <div className={styles['career-layout']}>
+        <div className={styles.portrait}>
+          <Image src="/assets/experience-portrait.webp" alt="Владимир Скворцов" width={800} height={1200} sizes="(max-width: 700px) 42vw, 45vw" />
         </div>
         <div className={styles.timeline}>
           {employers.map((employer) => (
@@ -41,6 +48,7 @@ export default function Experience() {
               ))}
             </article>
           ))}
+        </div>
         </div>
       </div>
     </section>

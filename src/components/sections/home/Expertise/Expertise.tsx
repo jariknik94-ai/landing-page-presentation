@@ -1,4 +1,6 @@
 import Icon from '@/components/ui/Icon/Icon';
+import ProfileQuote from '@/components/ui/ProfileQuote/ProfileQuote';
+import { quotes } from '@/data/quotes';
 import { instructionProfiles } from '@/data/resume';
 import styles from './Expertise.module.scss';
 
@@ -28,6 +30,7 @@ export default function Expertise() {
             </article>
           ))}
         </div>
+        <ProfileQuote text={quotes.expertise} />
         <details className={styles['instruction-details']}>
           <summary>Подробнее о должностных обязанностях</summary>
           <p className={styles['instruction-intro']}>Направления и функции из должностных инструкций, с которыми ознакомился Владимир. Инструкции описывают обязанности должностей и требования к ним, а не результаты конкретных проектов.</p>

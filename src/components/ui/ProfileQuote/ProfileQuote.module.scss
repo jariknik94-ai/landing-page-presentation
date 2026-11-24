@@ -1,0 +1,46 @@
+.quote {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px 40px;
+  margin: 48px 0 0;
+  padding: 32px 36px 32px 76px;
+  border: 1px solid rgba(72, 211, 204, .22);
+  background: linear-gradient(110deg, rgba(14, 75, 83, .34), rgba(6, 28, 39, .55));
+  box-shadow: inset 3px 0 #42d9d0;
+}
+
+.mark {
+  position: absolute;
+  top: 17px;
+  left: 28px;
+  color: #46dcd3;
+  font-family: var(--font-lora), serif;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.text {
+  margin: 0;
+  color: #eaf7f5;
+  font-family: var(--font-lora), serif;
+  font-size: clamp(18px, 1.55vw, 23px);
+  line-height: 1.55;
+}
+
+.author { display: flex; align-items: center; gap: 14px; }
+.author strong { display: block; color: #eaf7f5; font-size: 14px; font-weight: 600; }
+.caption { display: block; margin-top: 5px; color: #a2bfc2; font-size: 12px; line-height: 1.45; }
+.avatar { flex: 0 0 64px; width: 64px; height: 64px; overflow: hidden; border: 1px solid rgba(77, 226, 216, .7); border-radius: 50%; background: radial-gradient(circle at 50% 30%, #155760, #0a2732 75%); }
+.avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 800px) {
+  .quote { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .quote { margin-top: 32px; padding: 28px 22px 24px; }
+  .mark { position: static; height: 24px; font-size: 56px; }
+  .avatar { flex-basis: 56px; width: 56px; height: 56px; }
+}

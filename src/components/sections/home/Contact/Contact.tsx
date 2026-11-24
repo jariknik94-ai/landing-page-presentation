@@ -1,4 +1,5 @@
 import { site } from '@/data/site';
+import Image from 'next/image';
 import styles from './Contact.module.scss';
 
 type ContactIconName = 'phone' | 'email' | 'telegram' | 'vk' | 'instagram';
@@ -27,9 +28,14 @@ export default function Contact() {
   return (
     <section className={styles.contact} id="contact">
       <div className={`${styles.wrap} ${styles['contact-inner']}`}>
-        <div>
+        <div className={styles['contact-heading']}>
           <p className={styles.eyebrow}>На связи</p>
           <h2>Будем<br /><em>на связи.</em></h2>
+        </div>
+        <div className={styles.portrait}>
+          <Image src="/assets/contact-portrait.webp" alt="Владимир Скворцов" width={800} height={967} sizes="(max-width: 700px) 42vw, 50vw" />
+        </div>
+        <div className={styles['contact-copy']}>
           <p>Буду рад рассказать о своём опыте и обсудить профессиональные возможности в системном анализе, архитектуре и кибербезопасности.</p>
           <a className={`${styles.button} ${styles['button-primary']}`} href={site.social.telegram} target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
         </div>
