@@ -29,8 +29,8 @@ export default function Contact() {
       <div className={`${styles.wrap} ${styles['contact-inner']}`}>
         <div>
           <p className={styles.eyebrow}>На связи</p>
-          <h2>Обсудим вашу<br /><em>задачу?</em></h2>
-          <p>Открыт к профессиональному общению и интересным задачам в области системного анализа и архитектуры.</p>
+          <h2>Будем<br /><em>на связи.</em></h2>
+          <p>Буду рад рассказать о своём опыте и обсудить профессиональные возможности в системном анализе, архитектуре и кибербезопасности.</p>
           <a className={`${styles.button} ${styles['button-primary']}`} href={site.social.telegram} target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
         </div>
         <div className={styles['contact-aside']}>

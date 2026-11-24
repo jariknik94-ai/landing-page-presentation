@@ -9,7 +9,7 @@
 .eyebrow span { display: inline-block; width: 26px; height: 1px; background: #29e1d2; vertical-align: middle; margin-right: 10px; }
 .hero h1 { margin: 0; font: 400 clamp(4.1rem, 6.2vw, 7rem)/1.02 var(--font-lora), Georgia, serif; letter-spacing: -.045em; color: #f6f8f7; }
 .accent-line { width: 72px; height: 3px; background: #28e4d6; margin: 28px 0; }
-.hero-role { font-size: clamp(1.25rem, 1.9vw, 1.75rem); line-height: 1.4; margin: 0; color: #ebf3f3; }
+.hero-role { font-size: clamp(1.15rem, 1.65vw, 1.6rem); line-height: 1.4; margin: 0; color: #ebf3f3; }
 .hero-description { max-width: 430px; color: #b8cbd0; line-height: 1.8; font-size: 16px; margin: 22px 0 0; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px 35px; margin-top: 33px; }
 .text-link { display: inline-flex; align-items: center; font-size: 14px; color: #e5f4f1; text-decoration: none; }
@@ -36,7 +36,7 @@
   .hero-copy { width: 100%; padding: 126px 0 72px; }
   .hero-heading { width: 53%; min-height: clamp(200px, 55vw, 400px); }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 3.6rem); }
-  .hero-role { font-size: clamp(1rem, 3vw, 1.35rem); }
+  .hero-role { font-size: clamp(.9rem, 2.7vw, 1.35rem); overflow-wrap: anywhere; }
   .hero-architecture { top: 145px; left: 23%; width: min(72%, 440px); opacity: .45; }
   .hero-visual { position: absolute; top: 166px; right: 0; bottom: auto; width: 47%; height: clamp(200px, 55vw, 400px); }
   .hero-portrait { right: 0; }

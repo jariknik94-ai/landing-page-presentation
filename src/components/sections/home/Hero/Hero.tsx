@@ -11,9 +11,9 @@ export default function Hero() {
           <div className={styles['hero-heading']}>
             <h1>Владимир<br />Скворцов</h1>
             <div className={styles['accent-line']} />
-            <p className={styles['hero-role']}>Системный аналитик<br />и архитектор решений</p>
+            <p className={styles['hero-role']}>Системный аналитик<br />Архитектор решений<br />Эксперт по кибербезопасности</p>
           </div>
-          <p className={styles['hero-description']}>Проектирую ИТ-решения, прорабатываю требования и интеграции в финансовых и корпоративных системах.</p>
+          <p className={styles['hero-description']}>Проектирую ИТ-решения, прорабатываю требования и интеграции, учитываю риски информационной безопасности.</p>
           <div className={styles['hero-actions']}>
             <a className={`${styles.button} ${styles['button-primary']}`} href="#contact">Связаться</a>
             <a className={styles['text-link']} href="#projects">Посмотреть результаты <span><Icon name="arrow-down" /></span></a>

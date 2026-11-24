@@ -1,6 +1,20 @@
 import { experience } from '@/data/resume';
 import styles from './Experience.module.scss';
 
+type Position = (typeof experience)[number];
+
+const employers = experience.reduce<{ company: string; positions: Position[] }[]>((groups, position) => {
+  const last = groups[groups.length - 1];
+
+  if (last?.company === position.company) {
+    last.positions.push(position);
+  } else {
+    groups.push({ company: position.company, positions: [position] });
+  }
+
+  return groups;
+}, []);
+
 export default function Experience() {
   return (
     <section className={`${styles.section} ${styles.experience}`} id="experience">
@@ -11,16 +25,20 @@ export default function Experience() {
           <p className={styles['section-intro']}>Роли и зоны ответственности в банковских технологиях, корпоративных системах и развитии бизнес-процессов.</p>
         </div>
         <div className={styles.timeline}>
-          {experience.map((position) => (
-            <article className={styles['timeline-item']} key={`${position.company}-${position.period}`}>
-              <span className={styles['timeline-date']}>{position.period}</span>
-              <h3>{position.company}</h3>
-              <p className={styles['timeline-role']}>{position.role}</p>
-              <p>{position.summary}</p>
-              <details className={styles.details}>
-                <summary>Подробнее о работе</summary>
-                <ul>{position.details.map((item) => <li key={item}>{item}</li>)}</ul>
-              </details>
+          {employers.map((employer) => (
+            <article className={styles['timeline-company']} key={`${employer.company}-${employer.positions[0].period}`}>
+              <h3>{employer.company}</h3>
+              {employer.positions.map((position) => (
+                <section className={styles['timeline-item']} key={`${position.company}-${position.period}`}>
+                  <span className={styles['timeline-date']}>{position.period}</span>
+                  <h4 className={styles['timeline-role']}>{position.role}</h4>
+                  <p>{position.summary}</p>
+                  <details className={styles.details}>
+                    <summary>Подробнее о работе</summary>
+                    <ul>{position.details.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </details>
+                </section>
+              ))}
             </article>
           ))}
         </div>
