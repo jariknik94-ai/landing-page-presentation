@@ -5,6 +5,16 @@ import styles from './Hero.module.scss';
 export default function Hero() {
   return (
     <section className={styles.hero} id="top">
+      <Image
+        className={styles['hero-waves']}
+        src="/assets/hero-waves.webp"
+        alt=""
+        width={1672}
+        height={941}
+        sizes="100vw"
+        loading="eager"
+        fetchPriority="high"
+      />
       <div className={`${styles.wrap} ${styles['hero-inner']}`}>
         <img
           className={styles['hero-architecture']}
