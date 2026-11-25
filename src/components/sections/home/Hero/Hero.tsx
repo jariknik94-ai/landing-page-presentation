@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/Icon/Icon';
+import Image from 'next/image';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
@@ -47,10 +48,15 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles['hero-visual']}>
-          <img
+          <Image
             className={styles['hero-portrait']}
             src="/assets/hero-portrait.webp"
             alt="Владимир Скворцов"
+            width={1672}
+            height={941}
+            sizes="(max-width: 364px) 356px, (max-width: 727px) 98vw, (max-width: 1000px) 712px, 1400px"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
         <div className={styles['hero-bottom']}>
