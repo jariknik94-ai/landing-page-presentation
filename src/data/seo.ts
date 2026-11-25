@@ -1,6 +1,6 @@
 import { site } from './site';
 
-// Укажите SITE_URL при сборке, если у сайта появится собственный домен.
+// До запуска на vs-profile.ru используется текущий адрес; SITE_URL задаётся при сборке для VPS.
 export const siteUrl = new URL(
   process.env.SITE_URL || 'https://landing-page-presentation-sandy.vercel.app',
 ).origin;

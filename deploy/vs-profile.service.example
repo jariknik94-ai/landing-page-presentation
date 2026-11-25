@@ -1,0 +1,15 @@
+[Unit]
+Description=VS Profile Next.js website
+After=network.target
+
+[Service]
+Type=simple
+User=deploy-user
+WorkingDirectory=/var/www/landing-page-presentation
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run start -- --hostname 127.0.0.1 --port 3100
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
